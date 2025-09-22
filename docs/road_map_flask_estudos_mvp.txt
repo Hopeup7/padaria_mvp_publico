@@ -1,0 +1,198 @@
+Aqui está um relatório completo sobre tudo que você precisará estudar em Flask puro para implementar o MVP da padaria 🚀🔥.
+
+Relatório de Estudo – Flask no MVP da Padaria
+
+
+📌 1. Estruturação do Projeto Flask
+
+✔ Organização de Arquivos e Diretórios
+- Criar app.py como ponto de entrada do Flask.
+- Separar templates (templates/), arquivos estáticos (static/), e módulos (routes.py, models.py).
+
+✔ Criação do Servidor Flask
+- Configuração básica do Flask (app = Flask(__name__)).
+- Como rodar o servidor localmente (app.run(debug=True)).
+- Entender __name__ == "__main__" para inicializar corretamente o projeto.
+
+✔ Usando Blueprints para Modularidade
+- Divisão do código em módulos como estoque.py, pedidos.py, etc.
+- Criar Blueprints para organizar as rotas do projeto.
+
+
+📌 2. Definição e Manipulação de Rotas
+
+✔ Rotas Básicas (@app.route)
+- Criar rotas para listar produtos, pedidos e relatórios.
+- Trabalhar com métodos HTTP (GET, POST, PUT, DELETE).
+
+✔ Recebendo Dados via Formulário
+- Usar request.form para capturar dados de entrada.
+- Criar formulários HTML para enviar informações ao Flask.
+
+✔ Redirecionamento e Mensagens Flash
+- Como redirecionar o usuário (redirect(url_for())).
+- Exibir alertas de sucesso e erro usando flash().
+
+✔ Retorno de JSON
+- Como enviar respostas JSON, permitindo que os dados do sistema sejam formatados corretamente.
+
+
+📌 3. Banco de Dados SQLite com Flask
+
+✔ Conectar Flask ao SQLite
+- Criar e gerenciar um banco de dados (sqlite3.connect('padaria.db')).
+
+✔ CRUD (Create, Read, Update, Delete)
+- Adicionar, buscar, atualizar e excluir produtos no banco.
+
+✔ Consultas SQL dentro do Flask
+- Executar queries SQL usando Python puro (cursor.execute() e fetchall()).
+
+✔ Manejo de Erros e Conexões
+- Garantir que conexões sejam fechadas corretamente (conn.close()).
+
+
+📌 4. Uso do Flask-SQLAlchemy (ORM para SQLite)
+
+✔ Modelagem de Tabelas com SQLAlchemy
+- Criar classes Python que representam tabelas (db.Model).
+
+✔ Relacionamento entre Tabelas
+- Conectar pedidos e estoque com chaves estrangeiras (ForeignKey).
+
+✔ Execução de Consultas SQL via ORM
+- Produto.query.all() para buscar todos os registros.
+- Pedido.query.filter_by(id=1).first() para consultas refinadas.
+
+✔ Uso de Migrations com Flask-Migrate
+- Criar e atualizar tabelas sem perder dados (flask db migrate).
+
+
+📌 5. Templates com Jinja2
+
+✔ Renderizar Páginas HTML com Dados do Banco
+- Como usar render_template() para exibir produtos e pedidos.
+- Passar variáveis para templates dinâmicos ({{ nome_produto }}).
+
+✔ Estruturas Condicionais e Loops no Jinja2
+- Criar listas dinâmicas ({% for produto in produtos %}).
+- Usar condições para exibir alertas ({% if estoque < 5 %}).
+
+✔ Uso de Include e Extends em Templates
+- Criar um base.html para evitar código duplicado.
+- Reutilizar componentes com {% include "footer.html" %}.
+
+
+📌 6. Segurança e Autenticação
+✔ Sistema de Login e Logout
+- Criar um modelo de usuário para login (Flask-Login).
+- Hashing de senha (Werkzeug.security).
+
+✔ Proteção contra SQL Injection
+- Evitar consultas diretas (db.session.add(obj)).
+
+✔ Gerenciamento de Sessões
+- Usar session para manter informações do usuário ativo.
+
+✔ Proteção contra CSRF
+- Usar Flask-WTF para validar formulários.
+
+
+📌 7. Criando a Interface do Dashboard
+
+✔ Botões Funcionais no HTML
+- Exibir botões para registrar pedidos, consultar estoque, gerar relatórios.
+
+✔ Como Flask Processa Formulários
+- Criar inputs e capturar os dados no back-end.
+
+✔ Exibir Tabelas Dinâmicas com Dados do Banco
+- Mostrar todos os pedidos e estoque de forma organizada.
+
+
+📌 8. Preparação para Deploy e Produção
+
+✔ Rodar Flask em Servidores Reais
+- Como subir no Render, Digital Ocean ou AWS.
+
+✔ Uso de Variáveis de Ambiente
+- Ocultar credenciais sensíveis (os.environ.get('SECRET_KEY')).
+
+✔ Configuração para Produção
+- Ajustar DEBUG = False e otimizar recursos.
+
+🔥 Conclusão
+
+✔ Esse relatório cobre todo o Flask puro necessário para o MVP da padaria.
+✔ Com essas habilidades, você conseguirá estruturar rotas, trabalhar com SQLite, criar templates dinâmicos e gerenciar segurança.
+✔ Esqueça AJAX e JS por enquanto, e foque somente no Flask puro até ter domínio total.
+🚀 Quer que eu te ajude a montar um plano de estudos prático, com exercícios para cada tópico? Assim, você avança com aprendizado sólido e direto ao MVP! 💡💻📊
+Me diz o que acha! 😃
+
+🔹 1. Setup Inicial
+Objetivo: Criar a base mínima do projeto.
+- Instalar o Flask (pip install flask).
+- Criar a estrutura de pastas:
+/projeto_padaria
+├── app.py
+├── /templates
+│   ├── login.html
+│   ├── dashboard.html
+└── /static (caso precise de CSS futuro)
+
+
+20/06/2025
+🔹 2. Criação das Rotas e Views
+Objetivo: Aprender a lidar com URLs e HTML.
+- Criar rotas básicas com @app.route('/'), @app.route('/dashboard').
+- Renderizar templates com render_template().
+- Aprender a passar dados do Python pro HTML via Jinja2 ({{ nome }}, for, if).
+
+🔹 3. Formulários HTML + Flask
+Objetivo: Interação com o usuário.
+- Criar formulários simples (registro de pedido, login...).
+- Acessar request.form para capturar dados.
+- Usar POST e GET corretamente.
+- Redirecionar após ação (redirect, url_for).
+
+🔹 4. Lógica de Negócio com POO
+Objetivo: Integrar suas classes com a lógica do Flask.
+- Conectar o Flask com as classes Padaria, Pedido e Produto.
+- Registrar pedidos e atualizar o estoque em tempo real via terminal e depois pela interface.
+
+🔹 5. Integração com SQLite (manual)
+Objetivo: Armazenar pedidos e produtos.
+- Conectar ao SQLite com sqlite3.
+- Criar funções para inserir, buscar e atualizar registros.
+- Usar essas funções dentro das views do Flask.
+
+🔹 6. Templates Condicionais
+Objetivo: Exibir informações do sistema no HTML.
+- Listar estoque em uma tabela HTML com Jinja2.
+- Exibir alertas de vencimento (condições com if produto["vencimento"] < data_atual:).
+- Apresentar lucros em tempo real.
+
+🔹 7. Sessões e Login (sem banco por enquanto)
+Objetivo: Proteger rotas e simular usuários.
+- Criar página de login.
+- Usar session para controlar o acesso ao dashboard.
+- Proteger rotas com checagem if "usuario" in session:.
+
+🔹 8. Modularização com Blueprints (opcional no início)
+Objetivo: Organizar rotas e lógica conforme o projeto cresce.
+- Separar rotas por módulos: rotas_pedidos.py, rotas_estoque.py.
+- Usar Blueprints para desacoplar seu código.
+
+🔹 9. Testes Manuais com Flask + Templates
+Objetivo: Simular navegação completa.
+- Inserir produto.
+- Fazer pedido.
+- Verificar atualização automática do estoque e lucro.
+- Validar fluxo do login até a dashboard.
+
+🔹 10. Polimento e Navegação
+Objetivo: Criar uma experiência estável.
+- Organizar feedbacks do sistema (ex: “Pedido registrado com sucesso!”).
+- Redirecionar de forma inteligente (url_for()).
+- Testar fluxo sem precisar reiniciar o app o tempo todo (debug=True)
+

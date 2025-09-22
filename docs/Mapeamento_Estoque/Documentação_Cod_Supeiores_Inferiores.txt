@@ -1,0 +1,125 @@
+Claro, du! Aqui está a versão atualizada do seu documento de padronização, agora com o novo sub-estoque de Conveniência incluído, usando os códigos CcXXX (superior) e TCcXXX (inferior), mantendo o padrão aplicado nos demais:
+
+📌 Padronização de Códigos Superiores e Inferiores
+Este documento define a estrutura padronizada dos sub-estoques do MVP da padaria, garantindo rastreabilidade eficiente e organização clara dos produtos.
+Cada categoria segue a lógica de códigos superiores (produtos principais) e códigos inferiores (variações).
+
+
+🥩 Carnes
+- Código Superior: CXXX → Produto principal (ex: C001 = Picanha Maturatta - Friboi)
+- Código Inferior: TCXXX → Embalagens e conservação (ex: TC001.1 = Picanha - Pacote Resfriado)
+
+
+🌾 Grãos
+- Código Superior: GXXX → Produto principal (ex: G001 = Arroz Camil Tipo 1)
+- Código Inferior: TGXXX → Embalagem e volume (ex: TG001.1 = Arroz - Pacote 1kg)
+
+
+🏺 Condimentos
+- Código Superior: CdXXX → Produto principal (ex: Cd009 = Óleo de Soja - Liza)
+- Código Inferior: TCdXXX → Variações de embalagem/volume (ex: TCd009.1 = Liza - Latão 18L)
+
+
+🍻 Cervejas
+- Código Superior: CJXXX → Marca principal (ex: CJ001 = Skol)
+- Código Inferior: TCJXXX → Embalagens e conservação (ex: TCJ001.1 = Skol - Lata 350ml)
+
+
+🛍️ Conveniência
+- Código Superior: CcXXX → Produto principal (ex: Cc001 = ex:Biscoito Recheado Bono)
+- Código Inferior: TCcXXX → Embalagens e conservação (ex: TCc001.1 = Bono Chocolate 130g)
+
+
+🍫 Doces
+- Código Superior: DXXX → Produto principal (ex: D001 = Bala 7 Belo Framboesa - Arcor)
+- Código Inferior: TDXXX → Embalagens e conservação (ex: TD001 = Bala 7 Belo Framboesa - Arcor - Pacote)
+
+
+🥩 Embutidos
+- Código Superior: EXXX → Produto principal (ex: E001 = Linguiça Calabresa - Ceratti
+- Código Inferior: TEXXX → Embalagens e conservação (ex: TE001 = Linguiça - Pacote )
+
+
+🥤 Energéticos
+- Código Superior: EnXXX → Produto principal (ex: En001 = 
+- Código Inferior: TEnXXX → Embalagens e conservação (ex: TEn001 = Red Bull Tradicional -  Lata)
+
+💦 Água
+- Código Superior: AgXXX → Produto principal (ex: Ag001 = 
+- Código Inferior: TAgXXX → Embalagens e conservação (ex: TAg001 = Água Mineral Sem Gás - Lindoya - Garrafa)
+
+
+💧 Gelo
+- Código Superior: GeXXX → Produto principal (ex: Ge001 = 
+- Código Inferior: TGeXXX → Embalagens e conservação (ex: TGe001 = Gelo - Gelo do Sul - Pacote)
+
+
+🥦 Hortifrutti
+- Código Superior: HXXX → Produto principal (ex: H001 = 
+- Código Inferior: THXXX → Embalagens e conservação (ex: TH001 = Batata - Oba- Saco)
+
+🥛 Laticínios
+- Código Superior: LXXX → Produto principal (ex: L001 = 
+- Código Inferior: TLXXX → Embalagens e conservação (ex: TL001 = Mussarela - Tiroles - Peça)
+
+
+🧼 Limpeza
+- Código Superior: LzXXX → Produto principal (ex: Lz001 = 
+- Código Inferior: TLzXXX → Embalagens e conservação (ex: TLz001 = Água Sanitária - Cândida - Garrafa)
+
+
+🥚 Ovos e Fermentos
+- Código Superior: OfXXX → Produto principal (ex: Of001 = 
+- Código Inferior: TOfzXXX → Embalagens e conservação (ex: TOf001 = Ovos Frescos - Granja Mantiqueira - Bandeja)
+
+
+🥤 Refrigerantes
+- Código Superior: RXXX → Produto principal (ex: R001 = 
+- Código Inferior: TRXXX → Embalagens e conservação (ex: TR001 = Coca Cola - Coca Cola - Garrafa)
+
+
+🍴 Utensilios
+- Código Superior: UXXX → Produto principal (ex: U001 = 
+- Código Inferior: TUXXX → Embalagens e conservação (ex: TU001 = Prato Fundo de Vidro Simples - Nadir Figueiredo - Caixa de Papelão)
+
+
+🍊 Suco
+- Código Superior: SXXX → Produto principal (ex: S001 = 
+- Código Inferior: TSXXX → Embalagens e conservação (ex: TS001 = Fruta Pura - Manga - Pacote)
+
+
+🍇 Vinhos
+- Código Superior: VXXX → Produto principal (ex: V001 = 
+- Código Inferior: TVXXX → Embalagens e conservação (ex: TV001 = Salton Vinhedo da Lebre Cabernet Sauvignon - Garrafa)
+
+
+🥃 Destilados
+- Código Superior: DXXX → Produto principal (ex: D001 = 
+- Código Inferior: TDXXX → Embalagens e conservação (ex: TD001 = Whisky Johnnie Walker Red Label - Garrafa)
+
+💻 Equipamentos
+- Código Superior: EqXXX → Produto principal (ex: Eq001 = 
+- Código Inferior: TEqXXX → Embalagens e conservação (ex: TEq001 = Ventilador Industrial de Parede (60cm) - Ventisol - Unidade com suporte de parede, 3 pás, oscilante, 200W)
+
+
+🍽️ Descartáveis
+- Código Superior: DeXXX → Produto principal (ex: De001 = 
+- Código Inferior: TDeXXX → Embalagens e conservação (ex: TDe001 = Garfos - EcoPack - Plástico PP)
+
+🍞 Padaria
+- Código Superior: PdXXX → Produto principal (ex: P001 = 
+- Código Inferior: TPdXXX → Embalagens e conservação (ex: TP001 = Pão Francês - Artesanal/Padaria Local - Unidade)
+
+🌴 Conservas
+- Código Superior: CsXXX → Produto principal (ex: Cs001 = 
+- Código Inferior: TCsXXX → Embalagens e conservação (ex: TCs001 = Azeitona Verde - Pote - Unidade)
+
+
+🌱 Pastas
+- Código Superior: PsXXX → Produto principal (ex: Ps001 = 
+- Código Inferior: TPsXXX → Embalagens e conservação (ex: TPs001 = Hommus - Pote - Unidade)
+
+🔄 Benefícios da Padronização
+- ✅ Rastreabilidade → Identidade única por produto e por variação
+- ✅ Expansibilidade → Novas categorias não quebram o padrão já existente
+- ✅ Integração com SQLite → Facilita queries, normalização e vinculação entre tabelas

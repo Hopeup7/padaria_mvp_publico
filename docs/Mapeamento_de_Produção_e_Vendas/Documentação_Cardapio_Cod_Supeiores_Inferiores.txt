@@ -1,0 +1,127 @@
+***************************************************
+✅ Relatório de Checkpoint – Definição Oficial da Estrutura de Mapeamento de Insumos por Opção de Venda
+Data: 21/06/2025
+Responsável: Du
+Projeto: MVP Sistema de Gestão para Padaria
+Módulo: Estrutura de Cardápio & Mapeamento de Insumos
+
+📌 Objetivo deste Checkpoint
+Consolidar a estrutura padrão que será utilizada no sistema para registrar, mapear e operar opções de venda com seus respectivos insumos. Essa estrutura servirá como base oficial a partir deste ponto para todos os produtos da padaria: lanches, pizzas, doces, porções, drinks, pratos feitos e afins.
+
+🧱 Estrutura Oficial Definida
+cardapio_ins = {
+    "Opção Vendas Comida": {
+        "Categoria": [  # Exemplo: "Lanches", "Pizzas", etc.
+            {
+                "Código": "string",        # Ex: "Lc001"
+                "Lanche": "string",        # Nome do item
+                "Variações": [
+                    {
+                        "Código_Tipo": "string",      # Ex: "TLc001.1"
+                        "Nome": "string",             # Nome da variação (Ex: "Big")
+                        "Preço": float,               # Ex: 7.00
+                        "Insumos": [
+                            {
+                                "Código_Sup": "string",  # Código do insumo
+                                "Volume": int or float, # Quantidade
+                                "Unidade": "string"     # Ex: "un", "g", "ml", etc.
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+
+
+
+🔍 Aplicações previstas da estrutura
+- Cadastro e visualização de itens por categoria e variação.
+- Cálculo de custo baseado nos insumos consumidos.
+- Baixa automática de estoque unificado via código (Código_Sup).
+- Geração de relatórios por tipo de variação, item ou categoria.
+- Integração com front-end (Flask) e banco de dados (SQLite) futuramente.
+
+🧭 Próximas Etapas
+- Conversão de outras categorias de produtos (porções, pizzas, doces) para esse formato.
+- Validação automática de insumos com base no estoque_unificado.
+- Criação de classes Python compatíveis com esta estrutura.
+- Construção de rotas Flask e endpoints para registrar e consultar esses dados.
+
+🙏 Observações Finais
+Esta estrutura está em total alinhamento com a arquitetura proposta no relatório executivo do projeto. Modular, extensível e organizada, ela facilita a escalabilidade do sistema e é ideal para o MVP da padaria.
+
+***************************************************
+Claro, du! Aqui está a versão atualizada do seu documento de padronização de insumos por opção de venda, usando os códigos LcXXX (superior (ex: "Código": "Lc001",)) e TCcXXX (inferior ("Código_Tipo": "TLc001",)), mantendo o padrão aplicado nos demais:
+
+📌 Padronização de Códigos Superiores e Inferiores
+Este documento define a estrutura padronizada dos mapeamento de insumos por opção de venda do MVP da padaria, garantindo rastreabilidade eficiente e organização clara dos produtos do estoque que conpõem a opção de venda, onde esses produtos referenciados subtraem a porção utilizada na confecção do prato do mesmo p-roduto no estoque.
+Ex:
+
+cardapio_ins = {
+    "Opção Vendas Comida": {
+        "Lanches": [
+            {
+                "Código": "Lc001",
+                "Lanche": "Misto Quente",
+                "Tipo": "OpLc001",
+                "Variações": [
+                    {
+                        "Código_Tipo": "TLc001",
+                        "Nome": "Tradicional",
+                        "Preço": 5.00,
+                        "Insumos": [
+                            {"Código_Sup": "Pd001", "Volume": 1,
+                                "Unidade": "un"},  # cod Superior do Pão
+                            {"Código_Sup": "L007", "Volume": 100,
+                                "Unidade": "g"},  # cod Superior do Queijo
+                            # cod Superior do Presunto
+                            {"Código_Sup": "E005", "Volume": 100, "Unidade": "g"}
+                        ]
+                    },
+                    {
+                        "Código_Tipo": "TLc001.1",
+                        "Nome": "Big",
+                        "Preço": 7.00,
+                        "Insumos": [
+                            {"Código_Sup": "Pd003", "Volume": 1,
+                                "Unidade": "un"},  # cod Superior do Pão
+                            {"Código_Sup": "L007", "Volume": 150,
+                                "Unidade": "g"},  # cod Superior do Queijo
+                            # cod Superior do Presunto
+                            {"Código_Sup": "E005", "Volume": 150, "Unidade": "g"},
+                            # cod Superior do Orégano
+                            {"Código_Sup": "Cd017", "Volume": 2, "Unidade": "fatia"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+
+***
+
+
+
+
+Cada categoria segue a lógica de códigos superiores (produtos principais) e códigos inferiores (variações).
+
+ Lanches - Chapa
+- Código Superior: LcXXX → Produto principal (ex: Lc001 = Misto Quente)
+- Código Inferior: TLcXXX(ou TLcXXX.X) → Variações da Opção de Venda (ex: TLc001 = Misto Quente - "Tradicional")
+- Características: (Pão Francês, Queijo Prato, Presunto)
+
+Lanches - Beirutes
+- Código Superior: LbXXX → Produto principal (ex: Lb001 = Beirute Filé Mignon)
+- Código Inferior: TLbXXX(ou TLbXXX.X) → Variações da Opção de Venda (ex: TLb001 = Beirute Filé Mignon - "Tradicional")
+- Características: (Pão Brioche, Hamburger de Carne Artesanal(Acem), Alface, Tomate, Queijo Prato, Maionese, Molho da Titia)
+
+
+                
+
+
+
+
+

@@ -1,0 +1,978 @@
+print("Senhor, leve a mim e a minha família até o Senhor, pois em Ti e Contigo seremos abundadntes em vida.")
+"""📌 O que foi incluído:
+✅ Códigos superiores e inferiores: DXXX para produtos principais e TDXXX para variações, com TDXXX.X se necessário
+✅ Estrutura clara e rastreável: Marca, embalagem, peso, unidade e vencimento organizados corretamente
+✅ Função de exibição para facilitar consultas futuras
+✅ Preparação para futura integração com SQLite
+Se quiser conferir antes da versão final, posso te apresentar um resumo ou validar ajustes. Seguimos estruturando com excelência!
+"""
+
+estoque = {
+    "Alimentos": {
+        "Condimentos - Açucares e Cafés": [
+            {
+                "Código": "Cd001",
+                "Marca": "Café em Pó - Pilão",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd001",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 10,
+                        "Preço_Unitário": 39.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd002",
+                "Marca": "Café Solúvel - Nescafé",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd002",
+                        "Tipo_Embalagem": "Pote Plástico",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 2,
+                        "Preço_Unitário": 89.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd003",
+                "Marca": "Açucar Refinado - União",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd003",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 10,
+                        "Preço_Unitário": 11.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd004",
+                "Marca": "Açucar Mascavo - Madoxx Natural",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd004",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 2,
+                        "Preço_Unitário": 11.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd005",
+                "Marca": "Açucar Cristal - União",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd005",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 10,
+                        "Preço_Unitário": 6.49,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd006",
+                "Marca": "Adoçante Dietético(Sachês) -Finn",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd006",
+                        "Tipo_Embalagem": "Caixa",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 400,
+                        "Preço_Unitário": 6.49,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd007",
+                "Marca": "Adoçante Líquido - Zero Cal",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd007",
+                        "Tipo_Embalagem": "Frasco",
+                        "Volume": 100,
+                        "Unidade": "ml",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 20.99,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd008",
+                "Marca": "Adoçante Líquido - Adocyl",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd008",
+                        "Tipo_Embalagem": "Frasco",
+                        "Volume": 200,
+                        "Unidade": "ml",
+                        "Quantidade_Total": 2,
+                        "Preço_Unitário": 9.37,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            }
+        ],
+        "Condimentos - Óleos e Azeites": [
+            {
+                "Código": "Cd009",
+                "Marca": "Óleo de Soja - Liza",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd009",
+                        "Tipo_Embalagem": "Garrafa Pet",
+                        "Volume": 1,
+                        "Unidade": "L",
+                        "Quantidade_Total": 24,
+                        "Preço_Unitário": 9.98,
+                        "Vencimento": "12/12/2025"
+                    },
+                    {
+                        "Código_Tipo": "TCd009.1",
+                        "Tipo_Embalagem": "Latão",
+                        "Volume": 18,
+                        "Unidade": "L",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 448.58,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd010",
+                "Marca": "Óleo de Girassol - Liza",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd010",
+                        "Tipo_Embalagem": "Garrafa Pet",
+                        "Volume": 1,
+                        "Unidade": "L",
+                        "Quantidade_Total": 24,
+                        "Preço_Unitário": 25.71,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd011",
+                "Marca": "Azeite de Oliva Extra Virgem - Gallo",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd011",
+                        "Tipo_Embalagem": "Garrafa de Vidro",
+                        "Volume": 1,
+                        "Unidade": "L",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 139.98,
+                        "Vencimento": "12/12/2025"
+                    },
+                    {
+                        "Código_Tipo": "TCd011.1",
+                        "Tipo_Embalagem": "Galão",
+                        "Volume": 5,
+                        "Unidade": "L",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 385.77,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd012",
+                "Marca": "Azeite de Dendê - Arrifan",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd012",
+                        "Tipo_Embalagem": "Garrafa Pet",
+                        "Volume": 1,
+                        "Unidade": "L",
+                        "Quantidade_Total": 2,
+                        "Preço_Unitário": 15.98,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            }
+        ],
+        "Condimentos - Temperos Secos": [
+            {
+                "Código": "Cd013",
+                "Marca": "Sal Refinado - Cisne",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd013",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 10,
+                        "Preço_Unitário": 3.49,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd014",
+                "Marca": "Sal Grosso - Lebre",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd014",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 10,
+                        "Preço_Unitário": 2.49,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd015",
+                "Marca": "Pimenta do Reino - Cantagallo",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd015",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 66.50,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd016",
+                "Marca": "Páprica Picante - Premium",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd016",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 36.60,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd017",
+                "Marca": "Oregano Desidratado - Peruano",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd017",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 30.95,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd018",
+                "Marca": "Alecrim Seco - Niyati",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd018",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 26.98,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd019",
+                "Marca": "Alho em Pó - Premium",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd019",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 34.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd020",
+                "Marca": "Cebola Desidratada - Premium",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd020",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 52.80,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd021",
+                "Marca": "Chimichurri - Original",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd021",
+                        "Tipo_Embalagem": "Pacote",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 65.45,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            }
+        ],
+        "Condimentos - Vinagres e Conservantes": [
+            {
+                "Código": "Cd022",
+                "Marca": "Vinagre de Álcool - Castelo",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd022",
+                        "Tipo_Embalagem": "Garrafa Pet",
+                        "Volume": 1,
+                        "Unidade": "L",
+                        "Quantidade_Total": 15,
+                        "Preço_Unitário": 17.39,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd023",
+                "Marca": "Vinagre Balsâmico Tradicional - Castelo",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd023",
+                        "Tipo_Embalagem": "Garrafa de Vidro",
+                        "Volume": 1,
+                        "Unidade": "L",
+                        "Quantidade_Total": 10,
+                        "Preço_Unitário": 17.26,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            }
+        ],
+        "Condimentos - Molhos": [
+            {
+                "Código": "Cd024",
+                "Marca": "Molho de Tomate Tradicional - Heinz",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd024",
+                        "Tipo_Embalagem": "Pouch Flexível",
+                        "Volume": 5,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 62.45,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd025",
+                "Marca": "Molho Barbecue Original - Heinz",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd025",
+                        "Tipo_Embalagem": "Squeeze Plástico",
+                        "Volume": 5,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 299.75,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd026",
+                "Marca": "Molho Shoyu Tradicional - Sakura",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd026",
+                        "Tipo_Embalagem": "Garrafa Pet",
+                        "Volume": 5,
+                        "Unidade": "L",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 143.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd027",
+                "Marca": "Molho Madeira ao Vinho - Elegé",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd027",
+                        "Tipo_Embalagem": "Caixa",
+                        "Volume": 5,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 107.00,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd028",
+                "Marca": "Molho Pimenta-Vermelha Original - Tabasco",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd028",
+                        "Tipo_Embalagem": "Vidro",
+                        "Volume": 5,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 1915.00,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd029",
+                "Marca": "Molho Inglês Worcester Shire - Kenko",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd029",
+                        "Tipo_Embalagem": "Garrafa Pet",
+                        "Volume": 5,
+                        "Unidade": "L",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 54.50,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd030",
+                "Marca": "Mostarda Tradicional - Heinz",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd030",
+                        "Tipo_Embalagem": "Pouch Flexível",
+                        "Volume": 5,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 89.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+            {
+                "Código": "Cd031",
+                "Marca": "Ketchup Tradicional - Heinz",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd031",
+                        "Tipo_Embalagem": "Pouch Flexível",
+                        "Volume": 5,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 79.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+	     {
+                "Código": "Cd032",
+                "Marca": "Maionese Tradicional - Hellman`s",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd032",
+                        "Tipo_Embalagem": "Balde Plástico",
+                        "Volume": 5,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 265.39,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            }
+	    {
+                "Código": "Cd033",
+                "Marca": " Vinagre de Maçã - Castelo",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd033",
+                        "Tipo_Embalagem": "Garrafa plástica",
+                        "Volume": 750,
+                        "Unidade": "ml",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 23.39,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            }, 
+             {
+                "Código": "Cd034",
+                "Marca": " Cebola em Pó - Castelo",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd034",
+                        "Tipo_Embalagem": "Pacote plástico",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 21.39,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+	     {
+                "Código": "Cd035",
+                "Marca": " Vinagre de Vinho(Vinho Branco)- Gallo",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd035",
+                        "Tipo_Embalagem": "Garrafa de vidro",
+                        "Volume": 250,
+                        "Unidade": "ml",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 21.39,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+	     {
+                "Código": "Cd036",
+                "Marca": " Vinagre de Vinho (Vinho Tinto) - Gallo",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd036",
+                        "Tipo_Embalagem": "Garrafa de vidro",
+                        "Volume": 270,
+                        "Unidade": "ml",
+                        "Quantidade_Total": 5,
+                        "Preço_Unitário": 21.39,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+	    {
+                "Código": "Cd037",
+                "Marca": " Pimenta Calabresa - Teka Naturais",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd037",
+                        "Tipo_Embalagem": "Pacote plástico",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 33.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+	    {
+                "Código": "Cd038",
+                "Marca": " Pimenta Dedo-de-Moça - Gran Hortifruti",
+                "Tipos": [
+                    {
+                        "Código_Tipo": "TCd038",
+                        "Tipo_Embalagem": "Bandeja plástica",
+                        "Volume": 1,
+                        "Unidade": "kg",
+                        "Quantidade_Total": 1,
+                        "Preço_Unitário": 44.90,
+                        "Vencimento": "12/12/2025"
+                    }
+                ]
+            },
+	    {
+  		"Código": "Cd039",
+  		"Marca": "Manjericão Fresco - Pague Menos",
+  		"Tipos": [
+   		    {
+      			"Código_Tipo": "TCd039",
+      			"Tipo_Embalagem": "Maço",
+      			"Volume": 100,
+      			"Unidade": "g",
+     			"Quantidade_Total": 10,
+      			"Preço_Unitário": 6.90,
+      			"Vencimento": "05/08/2025"
+    		    }
+  	        ]
+    	    },
+		{
+                    "Código": "Cd040",
+                    "Marca": "Alho Frito - SaborNordeste",
+                    "Tipos": [
+                            {
+                            "Código_Tipo": "TCd040",
+                            "Tipo_Embalagem": "Pacote",
+                            "Volume": 1,
+                            "Unidade": "kg",
+                            "Quantidade_Total": 5,
+                            "Preço_Unitário": 34.90,
+                            "Vencimento": "12/12/2025"
+                        }
+                ]
+            } 
+        ]
+    }
+}
+
+def estoque_Condimentos():
+    """aqui eu crio uma função que retornará um loop que percorrerá todo o estoque"""
+    for categoria, condimentos in estoque['Alimentos'].items():
+        print(f"\n\U0001f525 ► Categoria: {categoria} ◄ ")
+
+        for condimento in condimentos:
+            print(
+                f"\n\U0001f525 Código do Produto: {condimento['Código']}\n\U0001f7e2 {condimento['Marca']}")
+
+            for tipo in condimento['Tipos']:
+                print(f"\U0001f535 - {tipo['Tipo_Embalagem']} ({tipo['Volume']} {tipo['Unidade']})\n"
+
+                      f"Quantidade: {tipo['Quantidade_Total']} | Vencimento: {tipo['Vencimento']}\n"
+
+                      f"--> \U0001f4b0 Preço: R$ {tipo['Preço_Unitário']: .2f} <--\n******************************************\n" if tipo['Preço_Unitário'] else "\n \U0001f7e2 Preço: Não Informado.\n*************************")
+
+
+estoque_Condimentos()
+Senhor, leve a mim e a minha família até o Senhor, pois 
+em Ti e Contigo seremos abundadntes em vida.
+
+🔥 ► Categoria: Condimentos 
+- Açucares e Cafés ◄        
+
+🔥 Código do Produto: Cd001 
+🟢 Café em Pó - Pilão        
+🔵 - Pacote (1 kg)
+Quantidade: 10 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  39.90 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd002 
+🟢 Café Solúvel - Nescafé    
+🔵 - Pote Plástico (1 kg)   
+Quantidade: 2 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  89.90 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd003 
+🟢 Açucar Refinado - União   
+🔵 - Pacote (1 kg)
+Quantidade: 10 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  11.90 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd004 
+🟢 Açucar Mascavo - Madoxx N 
+atural
+🔵 - Pacote (1 kg)
+Quantidade: 2 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  11.90 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd005 
+🟢 Açucar Cristal - União    
+🔵 - Pacote (1 kg)
+Quantidade: 10 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  6.49 <--  
+******************************************
+
+
+🔥 Código do Produto: Cd006 
+🟢 Adoçante Dietético(Sachês 
+) -Finn
+🔵 - Caixa (1 kg)
+Quantidade: 400 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  6.49 <--  
+******************************************
+
+
+🔥 Código do Produto: Cd007 
+🟢 Adoçante Líquido - Zero C 
+al
+🔵 - Frasco (100 ml)        
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  20.99 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd008 
+🟢 Adoçante Líquido - Adocyl 
+🔵 - Frasco (200 ml)
+Quantidade: 2 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  9.37 <--  
+******************************************
+
+
+🔥 ► Categoria: Condimentos 
+- Óleos e Azeites ◄
+
+🔥 Código do Produto: Cd009 
+🟢 Óleo de Soja - Liza       
+🔵 - Garrafa Pet (1 L)      
+Quantidade: 24 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  9.98 <--  
+******************************************
+
+🔵 - Latão (18 L)
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  448.58 <--******************************************
+
+
+🔥 Código do Produto: Cd010 
+🟢 Óleo de Girassol - Liza   
+🔵 - Garrafa Pet (1 L)      
+Quantidade: 24 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  25.71 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd011 
+🟢 Azeite de Oliva Extra Vir 
+gem - Gallo
+🔵 - Garrafa de Vidro (1 L) 
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  139.98 <--******************************************
+
+🔵 - Galão (5 L)
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  385.77 <--******************************************
+
+
+🔥 Código do Produto: Cd012 
+🟢 Azeite de Dendê - Arrifan 
+🔵 - Garrafa Pet (1 L)      
+Quantidade: 2 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  15.98 <-- 
+******************************************
+
+
+🔥 ► Categoria: Condimentos 
+- Temperos Secos ◄
+
+🔥 Código do Produto: Cd013 
+🟢 Sal Refinado - Cisne      
+🔵 - Pacote (1 kg)
+Quantidade: 10 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  3.49 <--  
+******************************************
+
+
+🔥 Código do Produto: Cd014 
+🟢 Sal Grosso - Lebre        
+🔵 - Pacote (1 kg)
+Quantidade: 10 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  2.49 <--  
+******************************************
+
+
+🔥 Código do Produto: Cd015 
+🟢 Pimenta do Reino - Cantag 
+allo
+🔵 - Pacote (1 kg)
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  66.50 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd016 
+🟢 Páprica Picante - Premium 
+🔵 - Pacote (1 kg)
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  36.60 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd017 
+🟢 Oregano Desidratado - Per 
+uano
+🔵 - Pacote (1 kg)
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  30.95 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd018 
+🟢 Alecrim Seco - Niyati     
+🔵 - Pacote (1 kg)
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  26.98 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd019 
+🟢 Alho em Pó - Premium      
+🔵 - Pacote (1 kg)
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  34.90 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd020 
+🟢 Cebola Desidratada - Prem 
+ium
+🔵 - Pacote (1 kg)
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  52.80 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd021 
+🟢 Chimichurri - Original    
+🔵 - Pacote (1 kg)
+Quantidade: 5 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  65.45 <-- 
+******************************************
+
+
+🔥 ► Categoria: Condimentos 
+- Vinagres e Conservantes ◄ 
+
+🔥 Código do Produto: Cd022 
+🟢 Vinagre de Álcool - Caste 
+lo
+🔵 - Garrafa Pet (1 L)      
+Quantidade: 15 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  17.39 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd023 
+🟢 Vinagre Balsâmico Tradici 
+onal - Castelo
+🔵 - Garrafa de Vidro (1 L) 
+Quantidade: 10 | Vencimento: 12/12/2025
+--> 💰 Preço: R$  17.26 <-- 
+******************************************
+
+
+🔥 ► Categoria: Condimentos 
+- Molhos ◄
+
+🔥 Código do Produto: Cd024 
+🟢 Molho de Tomate Tradicion 
+al - Heinz
+🔵 - Pouch Flexível (5 kg)  
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  62.45 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd025 
+🟢 Molho Barbecue Original - 
+ Heinz
+🔵 - Squeeze Plástico (5 kg)Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  299.75 <--******************************************
+
+
+🔥 Código do Produto: Cd026 
+🟢 Molho Shoyu Tradicional - 
+ Sakura
+🔵 - Garrafa Pet (5 L)      
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  143.90 <--******************************************
+
+
+🔥 Código do Produto: Cd027 
+🟢 Molho Madeira ao Vinho -  
+Elegé
+🔵 - Caixa (5 kg)
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  107.00 <--******************************************
+
+
+🔥 Código do Produto: Cd028 
+🟢 Molho Pimenta-Vermelha Or 
+iginal - Tabasco
+🔵 - Vidro (5 kg)
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  1915.00 <--
+******************************************
+
+
+🔥 Código do Produto: Cd029 
+🟢 Molho Inglês Worcester Sh 
+ire - Kenko
+🔵 - Garrafa Pet (5 L)      
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  54.50 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd030 
+🟢 Mostarda Tradicional - He 
+inz
+🔵 - Pouch Flexível (5 kg)
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  89.90 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd031 
+🟢 Ketchup Tradicional - Hei 
+nz
+🔵 - Pouch Flexível (5 kg)
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  79.90 <-- 
+******************************************
+
+
+🔥 Código do Produto: Cd032 
+🟢 Maionese Tradicional - He 
+llman`s
+🔵 - Balde Plástico (5 kg)  
+Quantidade: 1 | Vencimento: 
+12/12/2025
+--> 💰 Preço: R$  265.39 <--******************************************
+
+

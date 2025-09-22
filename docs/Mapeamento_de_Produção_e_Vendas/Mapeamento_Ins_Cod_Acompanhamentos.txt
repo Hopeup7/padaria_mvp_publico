@@ -1,0 +1,89 @@
+print(f"\n\U0001f535 Senhor, sei que És a Luz e que Tua Luz Ilumine a mim de mim mesmo, Meu Senhor.\U0001f7e2\n")
+
+cardapio_ins = {
+    "Opção Vendas Comida": {
+        "Acompanhamentos": [
+            {
+                "Código": "Ac001",
+                "Salada": "Ovos Fritos",
+                "Variações": [
+                    {
+                        "Código_Tipo": "TAc001",
+                        "Nome": "Tradicional",
+                        "Preço": 3.00,
+                        "Insumos": [
+                            {"Código_Sup": "Of001", "Volume": 2, "Unidade": "un"},
+
+                            {"Características": "Dois ovos Fritos"}
+                        ]
+                    },
+                    {
+                        "Código_Tipo": "TAc001",
+                        "Nome": "Com Orégano",
+                        "Preço": 3.00,
+                        "Insumos": [
+                            {"Código_Sup": "Of001", "Volume": 2, "Unidade": "un"},
+
+                            {"Código_Sup": "Cd017", "Volume": 5, "Unidade": "g"},
+
+                            {"Características": "Dois ovos Fritos, Orégano"}
+                        ]
+                    },
+                    {
+                        "Código_Tipo": "TAc001",
+                        "Nome": "Com Presunto",
+                        "Preço": 3.00,
+                        "Insumos": [
+                            {"Código_Sup": "Of001", "Volume": 2, "Unidade": "un"},
+
+                            {"Código_Sup": "E005", "Volume": 25, "Unidade": "g"},
+
+                            {"Código_Sup": "L007", "Volume": 25, "Unidade": "g"},
+
+                            {"Características": "Dois ovos Fritos, Presunto, Queijo"}
+                        ]
+                    },
+                    {
+                        "Código_Tipo": "TAc001",
+                        "Nome": "Monster",
+                        "Preço": 3.00,
+                        "Insumos": [
+                            {"Código_Sup": "Of001", "Volume": 2, "Unidade": "un"},
+
+                            {"Código_Sup": "E005", "Volume": 25, "Unidade": "g"},
+
+                            {"Código_Sup": "L007", "Volume": 25, "Unidade": "g"},
+
+                            {"Código_Sup": "E003", "Volume": 40, "Unidade": "g"},
+
+                            {"Características": "Dois ovos Fritos, Presunto, Queijo, Bacon"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "Código": "Ac002",
+                "Salada": "Mix de Legumes Grelhados",
+                "Variações": [
+                    {
+                        "Código_Tipo": "TAc00",
+                        "Nome": "Legumes Grelahados",
+                        "Preço": 5.00,
+                        "Insumos": [
+
+                            {"Código_Sup": "H007", "Volume": 25, "Unidade": "g"},
+
+                            {"Código_Sup": "H014", "Volume": 20, "Unidade": "g"},
+
+                            {"Código_Sup": "H013", "Volume": 20, "Unidade": "g"},
+
+                            {"Código_Sup": "H037", "Volume": 10, "Unidade": "g"},
+
+                            {"Características": "Abobrinha, Berinjela, Cenoura, Pimentão-Vermelho, Cebola Roxa, Grelhados"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
